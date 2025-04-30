@@ -1,0 +1,144 @@
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  direction: ltr;
+}
+html {
+  font-size: 62.5%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url(./images/OIP.jfif);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 27rem 1fr;
+}
+#input-container {
+  grid-area: 1/1/2/2;
+  display: flex;
+    background-color: rgb(251 220 230);
+  border-radius: 10px;
+  font-size: 2rem;
+  padding-left: 2rem;
+  margin: 11rem 0 8rem 8rem;
+}
+#add-btn {
+  justify-self: center;
+  font-size: 4rem;
+}
+
+#todo-input{
+  padding-left: 3rem;
+  width: 55rem;
+}
+
+.todolist-container {
+  grid-area: 2/1/3/2;
+}
+li.task-card  {
+  background-color: rgb(251 220 230);
+  border-radius: 10px;
+  font-size: 2rem;
+  padding-left: 2rem;
+  margin: 1rem 0 0 8rem;
+  min-height: 6rem;
+  max-width: 70rem;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  white-space: normal; /* اجازه شکستن متن */
+  overflow-wrap: break-word; /* پشتیبانی از مرورگرها */
+  flex: 1; /* گسترش برای پر کردن فضای موجود */
+ 
+}
+
+
+p.task-name{
+  margin-left: 3rem;
+  max-width: 60rem;
+  width:45% ;
+  word-wrap: break-word; /* شکستن کلمات بلند */
+  white-space: normal; /* اجازه شکستن متن */
+  overflow-wrap: break-word; /* پشتیبانی از مرورگرها */
+  flex: 1; /* گسترش برای پر کردن فضای موجود */
+}
+
+/* چک‌باکس مخفی */
+.hidden-checkbox {
+  display: none; /* مخفی کردن چک‌باکس اصلی */
+}
+
+/* ظاهر سفارشی */
+.custom-checkbox .done {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* طراحی مربع چک‌باکس */
+.custom-checkmark {
+  height:4rem;
+  width: 4rem;
+  border: 2px solid rgb(105, 80, 80); /* بوردر دلخواه */
+  border-radius: 50%; /* یا 0 برای مربع */
+  background-color: transparent;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* حالت فعال (تیک خورده) */
+.hidden-checkbox:checked + .custom-checkmark  {
+  background-color: rgb(105, 80, 80);
+  border-color: rgb(251 220 230);
+  position: relative;
+}
+
+/* اضافه کردن آیکون تیک */
+.hidden-checkbox:checked + .custom-checkmark::after  {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top:7px;
+  width:9px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+button.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(105, 80, 80);
+  font-size: 2.5rem; /* اندازه آیکون */
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.2s ease, color 0.3s ease; /* انیمیشن هنگام کلیک یا تغییر رنگ */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.delete-btn:hover {
+  color: red; /* تغییر رنگ هنگام هاور */
+  transform: scale(1.1); /* بزرگ‌تر شدن هنگام هاور */
+}
+
+
+.done {
+  color: gray;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+
